@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja de Instrumentos</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+
+  background: 
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  text-align: center;
+}
+
+.cart {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.instruments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.instrument {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+}
+
+.instrument img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  color: gold;
+  font-weight: bold;
+}
+
+button {
+  background: orange;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info {
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  text-align: center;
+}
+
+.info h2 {
+  color: gold;
+}
+
+/* CARRINHO */
+.carrinho {
+  background: rgba(0,0,0,0.8);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎶 Loja de intrumestos do Gusttavo Lima</h1>
+  <div class="cart"> 🛒<span id="cart-count">0</span></div>
+</header>
+
+<div class="instruments">
+
+<div class="instrument">
+<img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=400&q=80">
+<h3>Violão</h3>
+<p class="price">R$ 1.250</p>
+<button onclick="addCart('Violão',1250)">Comprar</button>
+</div>
+
+<div class="instrument">
+<img src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=400&q=80">
+<h3>Piano</h3>
+<p class="price">R$ 5.500</p>
+<button onclick="addCart('Piano',5500)">Comprar</button>
+</div>
+
+<div class="instrument">
+<img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=400&q=80">
+<h3>Bateria</h3>
+<p class="price">R$ 2.400</p>
+<button onclick="addCart('Bateria',2400)">Comprar</button>
+</div>
+
+<div class="instrument">
+<img src="C:\Users\aluno\Documents\indio\imagens\viol.png">
+<h3>Violino</h3>
+<p class="price">R$ 1.800</p>
+<button onclick="addCart('Violino',1800)">Comprar</button>
+</div>
+
+<div class="instrument">
+<img src="C:\Users\aluno\Documents\indio\imagens\sax.png">
+<h3>Saxofone</h3>
+<p class="price">R$ 2.700</p>
+<button onclick="addCart('Saxofone',2700)">Comprar</button>
+</div>
+
+<div class="instrument">
+<img src="C:\Users\aluno\Documents\indio\imagens\flauta.png">
+<h3>Flauta</h3>
+<p class="price">R$ 850</p>
+<button onclick="addCart('Flauta',850)">Comprar</button>
+</div>
+
+</div>
+
+<!-- CARRINHO -->
+<div class="carrinho">
+  <h2>🛒 Carrinho</h2>
+  <ul id="cart-items"></ul>
+  <p id="total">Total: R$ 0</p>
+</div>
+
+<!-- HISTÓRIA -->
+<div class="info">
+  <h2>🎵 História da Música</h2>
+  <p>
+    A música existe desde os tempos mais antigos da humanidade. Os primeiros seres humanos<br>
+    utilizavam sons da natureza e instrumentos simples para se expressar e celebrar<br>
+    Com o passar dos anos, a música evoluiu em diferentes culturas, criando estilos como<br>
+    música clássica, jazz, rock e pop<br>
+    Hoje, a música faz parte do nosso dia a dia e é uma das formas mais importantes de expressão.
+  </p>
+</div>
+
+<!-- QUADROS DE SERTANEJO -->
+<div class="info">
+  <h2>🎤 Ídolos do Sertanejo</h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+
+    <div class="instrument">
+      <img src="C:\Users\aluno\Documents\indio\imagens\lima.webp">
+      <h3>Gusttavo Lima</h3>
+      <p style="font-style:italic;">✍️ Gusttavo Lima</p>
+            Nascido em 1989, cresceu em um ambiente rural, filho de um tratorista e uma lavadeira. Ele relatou ter passado por dificuldades extremas, vivendo sem energia elétrica até os 9 anos e sem banheiro em casa, muitas vezes trabalhando como cortador de cana para ajudar a família.<br>
+    </div>
+
+    <div class="instrument">
+      <img src="C:\Users\aluno\Documents\indio\imagens\marilia.webp">
+      <h3>Marília Mendonça</h3>
+      <p style="font-style:italic;">✍️ Marília Mendonça</p>
+            Marília Mendonça (1995–2021) foi uma cantora, compositora e instrumentista brasileira, amplamente reconhecida como a "Rainha da Sofrência" e uma das maiores artistas da história da música brasileira. Ela revolucionou o sertanejo, dominando as paradas de sucesso e consolidando o "feminejo" — a ascensão das mulheres no topo dos hits sertanejos.<br>
+    </div>
+
+    <div class="instrument">
+      <img src="C:\Users\aluno\Documents\indio\imagens\zneto.jpg"> 
+      <h3>Zé Neto & Cristiano</h3>
+      <p style="font-style:italic;">✍️ Zé  Neto e Cristiano</p>
+         Os dois cresceram juntos na zona rural. Zé Neto sempre teve o sonho de cantar, enquanto Cristiano, que cantava na igreja, se juntou ao amigo para buscar o profissionalismo.<br>
+    </div>
+
+    <div class="instrument">
+      <img src="C:\Users\aluno\Documents\indio\imagens\j&m.jpg">
+      <h3>Jorge & Mateus</h3>
+      <p style="font-style:italic;">✍️ Jorge & Mateus</p>
+            Antes da fama, ambos tinham ligação com a música em Itumbiara. Mateus, inclusive, cursava Agronomia antes de se dedicar integralmente à música. Eles começaram cantando em bares e festas no interior de Goiás.<br>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addCart(nome, preco){
+  cart.push(nome);
+  total += preco;
+
+  document.getElementById("cart-count").innerText = cart.length;
+
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho(){
+  let lista = document.getElementById("cart-items");
+  let totalEl = document.getElementById("total");
+
+  lista.innerHTML = "";
+
+  cart.forEach(item => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    lista.appendChild(li);
+  });
+
+  totalEl.innerText = "Total: R$ " + total;
+}
+</script>
+
+</body>
+</html>
